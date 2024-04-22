@@ -1,0 +1,80 @@
+{
+  "publisher": "PengBoUESTC",
+  "name": "vscode-dot-preview",
+  "displayName": "vscode-dot-preview",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.10.5",
+  "description": "",
+  "author": "PengBoUESTC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PengBoUESTC/vscode-dot-preview.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "capabilities": {
+      "hoverProvider": "true"
+    },
+    "configuration": {
+      "type": "object",
+      "title": "dot env preview",
+      "properties": {
+        "dotpreview.prefix": {
+          "type": "array",
+          "description": "dot env files prefix list.",
+          "default": []
+        },
+        "dotpreview.env": {
+          "type": "array",
+          "description": "dot env files env list.",
+          "default": []
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ignore": "^5.3.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.1.1",
+    "@antfu/ni": "^0.21.9",
+    "@types/node": "^20.9.0",
+    "@types/vscode": "^1.84.1",
+    "@vscode/vsce": "^2.22.0",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.53.0",
+    "esno": "^4.0.0",
+    "pnpm": "^8.10.5",
+    "rimraf": "^5.0.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
+  }
+}
