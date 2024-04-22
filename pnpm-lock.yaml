@@ -25,7 +25,7 @@ importers:
         specifier: ^20.9.0
         version: 20.9.0
       '@types/vscode':
-        specifier: ^1.84.1
+        specifier: ^1.83.0
         version: 1.84.1
       '@vscode/vsce':
         specifier: ^2.22.0
@@ -583,7 +583,7 @@ packages:
     dev: true
 
   /@types/vscode@1.84.1:
-    resolution: {integrity: sha512-DB10vBRLEPA/us7p3gQilU2Tq5HDu6JWTyCpD9qtb7MKWIvJS5In9HU3YgVGCXf/miwHJiY62aXwjtUSMpT8HA==}
+    resolution: {integrity: sha1-LoncB0dDc3IJ8XaffndiSZ7aynE=, tarball: http://registry.m.jd.com/@types/vscode/download/@types/vscode-1.84.1.tgz}
     dev: true
 
   /@typescript-eslint/eslint-plugin@6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.53.0)(typescript@5.2.2):
