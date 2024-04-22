@@ -6,7 +6,7 @@ preview for dot file config value
 ```javascript
 {
   "dotpreview.prefix": [
-    "env"
+    ".env"
   ],
   "dotpreview.env": [
     "prepare",
