@@ -61,7 +61,7 @@ export default class ParseContext {
     const fileNameMap: Record<string, boolean> = {}
     prefixs.forEach((prefix) => {
       envs.forEach((env) => {
-        fileNameMap[`${prefix}.${env}`] = true
+        fileNameMap[env ? `${prefix}.${env}` : prefix] = true
       })
     })
     return fileNameMap
