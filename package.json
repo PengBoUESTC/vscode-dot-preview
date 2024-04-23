@@ -41,12 +41,12 @@
         },
         "dotpreview.env": {
           "type": "array",
-          "description": "dot env files env list.",
+          "description": "dot env files suffix list.",
           "default": []
         },
         "dotpreview.scanExclude": {
           "type": "array",
-          "description": "dir scan exclude paths.",
+          "description": "will skip these files/dirs when scan project dir.",
           "default": []
         }
       }

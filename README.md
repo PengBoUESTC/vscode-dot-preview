@@ -1,6 +1,8 @@
 # vscode-dot-preview
 
-preview for dot file config value
+show `dot env` files config info when U `hover` on the config `KEY`
+
+And it will help u to jump to the config file when U click the `Hover Message`
 
 ## config
 ```javascript
@@ -11,7 +13,12 @@ preview for dot file config value
   "dotpreview.env": [
     "prepare",
     "uat"
-  ]
+  ],
+  // will skip these files/dirs when scan project dir
+  "dotpreview.scanExclude": [
+    "src",
+    "__test__"
+  ],
 }
 ```
 
@@ -20,3 +27,4 @@ preview for dot file config value
 
 ## License
 
+[MIT](./LICENSE) 
