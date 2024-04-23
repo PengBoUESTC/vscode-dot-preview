@@ -91,7 +91,7 @@ export default class ParseContext {
   load(path: string): DotenvParseOutput {
     if (!existsSync(path))
       return {}
-    const env = expand(config({ processEnv: {}, path }))
+    const env = expand({ ...config({ path }), processEnv: {} })
     return env.parsed || {}
   }
 
