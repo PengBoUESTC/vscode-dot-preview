@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { config } from 'dotenv'
+import { expand } from 'dotenv-expand'
 import ignore from 'ignore'
 import { Uri, workspace } from 'vscode'
 import type { DotenvParseOutput } from 'dotenv'
@@ -50,9 +51,11 @@ export default class ParseContext {
   getPluginConfig() {
     const prefixs = [...new Set([...getConfiguredProperty(null, 'prefix', []), '.env'])]
     const envs = [...new Set([...getConfiguredProperty(null, 'env', []), ...defaultEnvs])]
+    const scanExclude: string[] = [...new Set([...getConfiguredProperty(null, 'scanExclude', []), ...['.git']])]
     return {
       envs,
       prefixs,
+      scanExclude,
     }
   }
 
@@ -68,9 +71,12 @@ export default class ParseContext {
   }
 
   scan(base: string): string[] {
+    const { scanExclude } = this.getPluginConfig()
     const files = readdirSync(base)
     const result = []
     for (const file of files) {
+      if (scanExclude.includes(file))
+        continue
       const curDir = join(base, file)
       if (this.ignore.ignores(relative(this.base, curDir)))
         continue
@@ -85,7 +91,7 @@ export default class ParseContext {
   load(path: string): DotenvParseOutput {
     if (!existsSync(path))
       return {}
-    const env = config({ path })
+    const env = expand(config({ processEnv: {}, path }))
     return env.parsed || {}
   }
 

@@ -43,6 +43,11 @@
           "type": "array",
           "description": "dot env files env list.",
           "default": []
+        },
+        "dotpreview.scanExclude": {
+          "type": "array",
+          "description": "dir scan exclude paths.",
+          "default": []
         }
       }
     }
@@ -60,6 +65,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
     "ignore": "^5.3.1"
   },
   "devDependencies": {

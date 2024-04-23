@@ -11,6 +11,9 @@ importers:
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
+      dotenv-expand:
+        specifier: ^11.0.6
+        version: 11.0.6
       ignore:
         specifier: ^5.3.1
         version: 5.3.1
@@ -1559,6 +1562,13 @@ packages:
       domelementtype: 2.3.0
       domhandler: 5.0.3
     dev: true
+
+  /dotenv-expand@11.0.6:
+    resolution: {integrity: sha512-8NHi73otpWsZGBSZwwknTXS5pqMOrk9+Ssrna8xCaxkzEpU9OTf9R5ArQGVw03//Zmk9MOwLPng9WwndvpAJ5g==}
+    engines: {node: '>=12'}
+    dependencies:
+      dotenv: 16.4.5
+    dev: false
 
   /dotenv@16.4.5:
     resolution: {integrity: sha1-zdOztgTLMn4oa0di4TUC9xfLCZ8=, tarball: http://registry.m.jd.com/dotenv/download/dotenv-16.4.5.tgz}
