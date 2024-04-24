@@ -21,7 +21,7 @@
     "dist"
   ],
   "engines": {
-    "vscode": "^1.83.0"
+    "vscode": "^1.70.0"
   },
   "activationEvents": [
     "onStartupFinished"
